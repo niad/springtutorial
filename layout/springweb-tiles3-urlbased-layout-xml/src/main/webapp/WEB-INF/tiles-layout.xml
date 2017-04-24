@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+		"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+		"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- default : 템플릿에 설정된 페이지의 구성 요소에 대한 실제 파일을 지정합니다. -->
+	<definition name="default" template="/WEB-INF/views/layout/layout_default.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/layout/default/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/layout/default/menu.jsp" />
+<!-- 		<put-attribute name="body" value="/WEB-INF/views/layout/default/body.jsp" /> -->
+		<put-attribute name="footer" value="/WEB-INF/views/layout/default/footer.jsp" />
+	</definition>
+
+<!-- 
+	
+	<definition name="main" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/main.jsp" />
+	</definition> 	
+	<definition name="login" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>  
+-->
+ 
+ 	<definition name="*/list" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{1}_list.jsp" />
+	</definition>
+	<definition name="*/new" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{1}_new.jsp" />
+	</definition>
+	<definition name="*/*/edit" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{1}_edit.jsp" />
+	</definition>
+	<definition name="*/*" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{1}_show.jsp" />
+	</definition>
+
+	
+	
+</tiles-definitions>

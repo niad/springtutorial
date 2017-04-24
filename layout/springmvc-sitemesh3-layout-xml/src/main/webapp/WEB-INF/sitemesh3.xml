@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- references http://wiki.sitemesh.org/wiki/display/sitemesh3/Configuring+SiteMesh+3 -->
+<sitemesh>
+
+	<mapping path="/js/*" exclude="true"/>
+	<mapping path="/css/*" exclude="true"/>
+	<mapping path="/img/*" exclude="true"/>
+	
+	<mapping path="/login*" exclude="true"/>
+	
+	<!-- main -->
+	<mapping path="/" decorator="/WEB-INF/views/layout/layout_no.jsp"/>
+    <mapping path="/*" decorator="/WEB-INF/views/layout/layout_default.jsp"/>    
+    <mapping path="**popup" decorator="/WEB-INF/views/layout/layout_popup.jsp"/>
+
+</sitemesh>
