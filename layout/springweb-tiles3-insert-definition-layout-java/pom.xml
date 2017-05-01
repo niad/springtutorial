@@ -21,27 +21,4 @@
 
 	</dependencies>
 
-
-	<build>
-		<finalName>springweb</finalName>
-		<plugins>
-
-			<!-- light weight WebApplicationServer jetty configuration, refer to http://www.eclipse.org/jetty/documentation/9.4.x/jetty-maven-plugin.html -->
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.3.9.v20160517</version>
-				<configuration>
-					<jettyXml></jettyXml>
-					<httpConnector>
-						<port>8080</port>
-					</httpConnector>
-					<webApp>
-						<contextPath>/springweb</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>

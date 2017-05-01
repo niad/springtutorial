@@ -10,6 +10,10 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring.version>4.3.7.RELEASE</spring.version>
+		<servlet.version>3.1.0</servlet.version>
+		<jsp.version>2.3.1</jsp.version>
+		<lombok.version>1.16.16</lombok.version>
+		<jetty.version>9.4.4.v20170414</jetty.version>
 	</properties>
 	
 	<dependencies>
@@ -31,7 +35,21 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.16</version>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	
+		<!-- compatible to tomcat 8.0.x, refer to http://tomcat.apache.org/whichversion.html -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${jsp.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	
@@ -57,11 +75,12 @@
 				</configuration>
 			</plugin>
 
+			<!-- http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html  -->
 			<!-- light weight WebApplicationServer jetty configuration, refer to http://www.eclipse.org/jetty/documentation/9.4.x/jetty-maven-plugin.html -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.3.9.v20160517</version>
+				<version>${jetty.version}</version>
 				<configuration>
 					<jettyXml></jettyXml>
 					<httpConnector>
